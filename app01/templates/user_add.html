@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+		<link rel="stylesheet" href="{% static "plugins/bootstrap-3.3.7-dist/css/bootstrap.css" %}">
+		<style>
+            h1 {
+                margin-bottom: 20px;
+                text-align: center;
+            }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>添加用户</h1>
+			<form action="/user/add/" method="post">
+				{% csrf_token %}
+				<div class="form-group">
+					<label>用户名</label>
+					<input type="text" class="form-control" placeholder="请输入用户名" name="name">
+				</div>
+				<div class="form-group">
+					<label>密码</label>
+					<input type="password" class="form-control" placeholder="请输入密码" name="password">
+				</div>
+				<div class="form-group">
+					<label>年龄</label>
+					<input type="text" class="form-control" placeholder="请输入年龄" name="age">
+				</div>
+				<button type="submit" class="btn btn-primary center-block">提交</button>
+			</form>
+		</div>
+
+	</body>
+</html>
